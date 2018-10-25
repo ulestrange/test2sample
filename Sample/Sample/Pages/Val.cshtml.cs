@@ -52,7 +52,6 @@ namespace Sample.Pages
                 
             }
             else
-
             { 
             Message = "Opps are you hacking!";
             }
