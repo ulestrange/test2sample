@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        This is a standard header from the layout page
+
+        <h3>@ViewBag.AnyKey</h3>
+
+        <h3>@ViewBag.WhyNotThis</h3>
+
+    </header>
+
+    <div>
+        @RenderBody()
+    </div>
+    <footer>This is a standard footer</footer>
+</body>
+</html>
