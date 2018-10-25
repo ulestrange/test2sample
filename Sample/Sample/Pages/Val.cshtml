@@ -7,3 +7,29 @@
 
 <h2>Val</h2>
 
+<form method="post">
+
+    <div asp-validation-summary=All></div>
+
+    <label asp-for=Number1></label>
+    <input asp-for=Number1><span asp-validation-for=Number1></span>
+
+    <label asp-for=Number2></label>
+    <input asp-for=Number2><span asp-validation-for=Number2></span>
+
+    <label asp-for=StudentNumber></label>
+    <input asp-for=StudentNumber><span asp-validation-for=StudentNumber></span>
+
+    <label asp-for=PhoneNumber></label>
+    <input asp-for=PhoneNumber><span asp-validation-for=PhoneNumber></span>
+
+    <label asp-for=PhoneNumber2></label>
+    <input asp-for=PhoneNumber2><span asp-validation-for=PhoneNumber2></span>
+
+
+
+    <button type="submit">Press Me</button>
+</form>
+
+<h2>@Model.Message</h2>
+
