@@ -1,0 +1,101 @@
+﻿@page
+@model people.Pages.taghelpplayModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>taghelpplay</title>
+    <link href="~/styles/main.css" rel="stylesheet" />
+</head>
+<body>
+    <form method="post">
+
+
+        <select asp-for=Province asp-items=Model.Provinces>   
+            <option value="">--Pick one--</option>
+        </select>
+
+
+        <select asp-for=Colour>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="yellow">Yellow</option>
+            <option value="red">Red</option>
+        </select>
+
+
+        <label asp-for=PhoneNumber></label>
+        <input asp-for=PhoneNumber />
+
+
+      
+        <label asp-for=Email></label>
+        <input asp-for=Email />
+        <label asp-for=Number1></label>
+        <input asp-for=Number1 />
+        <label asp-for=Number2></label>
+        <input asp-for=Number2 />
+        <label asp-for=Number3></label>
+        <input asp-for=Number3 />
+        <label asp-for=Number4></label>
+        <input asp-for=Number4 />
+        <label asp-for=Number5></label>
+        <input asp-for=Number5 />
+        <label asp-for=Number6></label>
+        <input asp-for=Number6 />
+        <label asp-for=Number7></label>
+        <input asp-for=Number7 />
+        <label asp-for=Number8></label>
+        <input asp-for=Number8 />
+        <label asp-for=DateTime1></label>
+        <input asp-for=DateTime1 asp-format="{0:dd/MM/yyyy}" />
+        <label asp-for=DateTime2></label>
+        <input asp-for=DateTime2 />
+        <label asp-for=DateTime3></label>
+        <input asp-for=DateTime3 asp-format="{0:dd/MM/yyyy}" />
+        <label asp-for=DateTime4></label>
+        <input asp-for=DateTime4 />
+        <input asp-for=IsContactAllowed /><label asp-for=IsContactAllowed></label>
+
+
+        <fieldset><legend>Which counties have you visited</legend>
+        @for (int i=0; i < Model.CountyList.Length; i++)
+        {
+            <input type="checkbox" asp-for=CountiesSelected[i] >
+            <label asp-for=CountiesSelected[i]>@Model.CountyList[i]</label>
+
+        }
+        </fieldset>
+
+        <button type="submit">Submit</button>
+    </form>
+    <section>
+        <ol>
+            @for (int i = 0; i < Model.CountyList.Length; i++)
+            {
+                if (Model.CountiesSelected[i])
+                {
+                    <li>@Model.CountyList[i]</li>
+                }
+            }
+        </ol>
+
+    </section>
+
+    <ul>
+        @foreach (string p in Model.Province)
+        {
+            <li>@p</li>
+        }
+
+    </ul>
+
+</body>
+</html>
